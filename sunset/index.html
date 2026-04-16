@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset Cafe</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta name="description" content="Sunset Cafe - Meniu de mâncare și băuturi. Food menu, desserts, coffee and more.">
+    <meta name="keywords" content="meniu, food menu, mâncare, drinks, cafea, Sunset Cafe, restaurant">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="side-menu" id="sideMenu">
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="food.html">Food</a></li>
+            <li><a href="drinks.html">Drinks</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sunset_cafe_ialoveni/" target="_blank" aria-label="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61581032687520#" target="_blank" aria-label="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@sunset_cafe_est2025" target="_blank" aria-label="TikTok"><i
+                    class="fab fa-tiktok"></i></a>
+        </div>
+    </nav>
+
+    <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Navigation">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <div class="container">
+        <a href="food.html" class="split left">
+            <div class="menu-display">
+                <svg class="arched-text" viewBox="0 0 300 300">
+                    <path id="foodCurve" d="M 40,150 A 110,110 0 1,1 260,150" fill="transparent" />
+                    <text>
+                        <textPath xlink:href="#foodCurve" startOffset="50%" text-anchor="middle">FOOD MENU</textPath>
+                    </text>
+                </svg>
+                <div class="logo-stack">
+                    <div class="filled-circle food-bg"></div>
+                    <div class="outline-ring food-outline"></div> <img src="logo.png" alt="Sunset Cafe"
+                        class="main-logo">
+                </div>
+            </div>
+        </a>
+
+        <a href="drinks.html" class="split right">
+            <div class="menu-display">
+                <svg class="arched-text" viewBox="0 0 300 300">
+                    <path id="drinkCurve" d="M 40,150 A 110,110 0 1,1 260,150" fill="transparent" />
+                    <text>
+                        <textPath xlink:href="#drinkCurve" startOffset="50%" text-anchor="middle">DRINKS MENU</textPath>
+                    </text>
+                </svg>
+                <div class="logo-stack">
+                    <div class="filled-circle drink-bg"></div>
+                    <div class="outline-ring drink-outline"></div> <img src="logo.png" alt="Sunset Cafe"
+                        class="main-logo">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            const burger = document.querySelector('.hamburger-menu');
+
+            // Toggle the slide-in menu
+            menu.classList.toggle('open');
+
+            // Toggle the X animation on the burger
+            burger.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
