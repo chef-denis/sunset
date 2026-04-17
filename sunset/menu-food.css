@@ -429,10 +429,6 @@ body.food-page {
         align-items: center;
     }
 
-    .menu-card.reverse-card {
-        flex-direction: row-reverse;
-    }
-
     .card-body {
         min-width: 0;
     }
@@ -445,10 +441,6 @@ body.food-page {
         align-self: center;
     }
 
-    .menu-card.reverse-card .card-media {
-        margin-left: 18px;
-        margin-right: 0;
-    }
 
     .card-media img {
         width: 100%;
@@ -531,6 +523,10 @@ body.food-page {
 @media (max-width: 560px) {
     .menu-card {
         flex-direction: column;
+        gap: 16px;
+    }
+    .reverse-card {
+        flex-direction: column-reverse;
         gap: 16px;
     }
 }
