@@ -28,7 +28,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 20px 150px 20px;
     margin: 0;
 }
 
@@ -214,7 +213,6 @@ body.food-page {
 .vintage-border-frame {
     background: transparent;
     border-radius: 40px;
-    padding: 40px 30px;
     box-shadow: none;
     border: none;
 }
@@ -487,13 +485,6 @@ body.food-page {
 }
 
 @media (max-width: 640px) {
-    body {
-        padding: 24px 16px 40px 16px;
-    }
-
-    .vintage-border-frame {
-        padding: 30px 16px;
-    }
 
     .menu-items {
         width: 100%;
@@ -526,13 +517,6 @@ body.food-page {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 20px 12px 40px 12px;
-    }
-
-    .vintage-border-frame {
-        padding: 24px 12px;
-    }
 
     .main-title {
         font-size: 2.3rem;
@@ -540,5 +524,13 @@ body.food-page {
 
     .category-title {
         font-size: 1.6rem;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .menu-card {
+        flex-direction: column;
+        gap: 16px;
     }
 }
