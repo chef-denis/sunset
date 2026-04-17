@@ -9,6 +9,52 @@ function toggleMenu() {
     burger.classList.toggle('active');
 }
 
+function getSavedLanguage() {
+    return localStorage.getItem('preferredLanguage') || 'ro';
+}
+
+function setSavedLanguage(lang) {
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+function updateLanguageButtons(lang) {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(btn => {
+        if (btn.textContent.toLowerCase() === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+function applyLanguageState(lang) {
+    document.documentElement.lang = lang === 'ru' ? 'ru' : 'ro';
+}
+
+function setupGlobalLanguageSwitcher() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    langButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = button.textContent.toLowerCase();
+            setSavedLanguage(lang);
+            updateLanguageButtons(lang);
+            applyLanguageState(lang);
+            if (typeof window.onLanguageChanged === 'function') {
+                window.onLanguageChanged(lang);
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupGlobalLanguageSwitcher();
+    const savedLanguage = getSavedLanguage();
+    updateLanguageButtons(savedLanguage);
+    applyLanguageState(savedLanguage);
+});
+
 function updateScrollSpy() {
     const navLinks = document.querySelectorAll('.bottom-nav a');
     const sections = Array.from(navLinks)

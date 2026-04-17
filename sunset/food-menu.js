@@ -1,6 +1,16 @@
 const menuContainer = document.getElementById('menuSections');
-const menuDataPath = 'menu-data.json';
 const placeholderImage = '1.jpg';
+let currentLanguage = 'ro';
+
+const menuDataPaths = {
+    ro: 'menu-data.json',
+    ru: 'menu-data-ru.json'
+};
+
+const allergenTexts = {
+    ro: '<strong>Alergeni alimentari (important):</strong> cereale cu gluten (grâu, orz, ovăz, secară), crustacee, ouă, pește, arahide, soia, lapte, fructe cu coajă lemnoasă (migdale, nuci, caju, etc.), țelină, muștar, semințe de susan, dioxid de sulf (peste 10mg/l), lupin și moluște',
+    ru: '<strong>Пищевая аллергия (важно):</strong> Содержит или может содержать: глютен (пшеница, ячмень, овёс, рожь), ракообразные, яйца, рыбу, арахис, сою, молоко, орехи (миндаль, грецкие орехи, кешью и др.), сельдерей, горчицу, кунжут, диоксид серы (более 10 мг/л), люпин и моллюсков.'
+};
 
 function formatDescription(description, weight) {
     if (description && weight) {
@@ -12,7 +22,7 @@ function formatDescription(description, weight) {
     if (weight) {
         return `(${weight})`;
     }
-    return 'Delicios și rafinat';
+    return currentLanguage === 'ru' ? 'Вкусно и элегантно' : 'Delicios și rafinat';
 }
 
 function createCard(item, index) {
@@ -102,7 +112,7 @@ function renderCategory(category, items) {
 
     section.appendChild(header);
 
-    const extraNames = new Set(['PAINE TOAST', 'PITA', 'GRISINE']);
+    const extraNames = new Set(['PAINE TOAST', 'PITA', 'GRISINE', 'CREMA Ricotta/ brinza/ greceasca', 'MIX APERITIVO']);
     const normalItems = items.filter(item => !extraNames.has(item.name));
     const extraItems = items.filter(item => extraNames.has(item.name));
 
@@ -142,9 +152,10 @@ function renderMenu(items) {
     updateScrollSpy();
 }
 
-async function loadMenuData() {
+async function loadMenuData(language = 'ro') {
+    currentLanguage = language;
     try {
-        const response = await fetch(menuDataPath);
+        const response = await fetch(menuDataPaths[language] || menuDataPaths['ro']);
         if (!response.ok) {
             throw new Error(`Could not load menu data: ${response.status}`);
         }
@@ -153,9 +164,26 @@ async function loadMenuData() {
         renderMenu(items);
     } catch (error) {
         console.error(error);
-        menuContainer.innerHTML = '<p class="error-message">Meniul nu poate fi afișat în acest moment.</p>';
+        const errorMsg = language === 'ru' ? 'Меню не может быть отображено в данный момент.' : 'Meniul nu poate fi afișat în acest moment.';
+        menuContainer.innerHTML = `<p class="error-message">${errorMsg}</p>`;
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadMenuData);
+function updateAllergenFooter(language) {
+    const allergenFootnote = document.getElementById('allergenFootnote');
+    if (allergenFootnote && allergenTexts[language]) {
+        allergenFootnote.querySelector('p').innerHTML = allergenTexts[language];
+    }
+}
+
+window.onLanguageChanged = function (lang) {
+    loadMenuData(lang);
+    updateAllergenFooter(lang);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'ro';
+    loadMenuData(savedLanguage);
+    updateAllergenFooter(savedLanguage);
+});
 

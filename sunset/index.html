@@ -15,6 +15,12 @@
 <body>
 
     <nav class="side-menu" id="sideMenu">
+        <div class="language-selector">
+            <a href="#" class="lang-btn active">RO</a>
+            <span class="lang-divider">|</span>
+            <a href="#" class="lang-btn">RU</a>
+        </div>
+
         <ul class="menu-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="food.html">Food</a></li>
@@ -71,18 +77,7 @@
         </a>
     </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('sideMenu');
-            const burger = document.querySelector('.hamburger-menu');
-
-            // Toggle the slide-in menu
-            menu.classList.toggle('open');
-
-            // Toggle the X animation on the burger
-            burger.classList.toggle('active');
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
