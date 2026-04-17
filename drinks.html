@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Băuturi | Sunset Cafe</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="menu-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="side-menu" id="sideMenu">
+        <div class="language-selector">
+            <a href="#" class="lang-btn active">RO</a>
+            <span class="lang-divider">|</span>
+            <a href="#" class="lang-btn">RU</a>
+        </div>
+
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="food.html">Food</a></li>
+            <li><a href="drinks.html">Drinks</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/sunset_cafe_ialoveni/" target="_blank" aria-label="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61581032687520#" target="_blank" aria-label="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@sunset_cafe_est2025" target="_blank" aria-label="TikTok"><i
+                    class="fab fa-tiktok"></i></a>
+        </div>
+    </nav>
+
+    <button class="hamburger-menu" onclick="toggleMenu()" aria-label="Toggle Navigation">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <div class="menu-container">
+        <div class="vintage-border-frame">
+
+            <header>
+                <h1 class="main-title">Drinks Menu</h1>
+            </header>
+
+            <section id="cafea">
+                <h2 class="section-title">Cafea</h2>
+                <div class="item"><span>Americano/ Espresso</span> <span class="price">27 lei</span></div>
+                <div class="item"><span>Cappuccino</span> <span class="price">36 lei</span></div>
+                <div class="item"><span>Cappuccino cu lapte vegetal</span> <span class="price">40 lei</span></div>
+                <div class="item"><span>Latte</span> <span class="price">40 lei</span></div>
+                <div class="item"><span>Latte cu lapte vegetal</span> <span class="price">44 lei</span></div>
+                <div class="item"><span>Raf Coffee</span> <span class="price">45 lei</span></div>
+                <div class="item"><span>Flat White</span> <span class="price">45 lei</span></div>
+                <div class="item"><span>Hot Chocolate</span> <span class="price">30 lei</span></div>
+                <div class="item"><span>Hot Chocolate cu lapte vegetal</span> <span class="price">35 lei</span></div>
+
+                <div class="line-divider"></div>
+
+                <div class="item"><span>Iced Latte</span> <span class="price">40 lei</span></div>
+                <div class="item"><span>Iced Latte cu lapte vegetal</span> <span class="price">45 lei</span></div>
+                <div class="item"><span>Espresso Tonic</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Bumble Coffee</span> <span class="price">75 lei</span></div>
+            </section>
+
+            <div class="line-divider"></div>
+
+            <section id="ceai">
+                <h2 class="section-title">Ceai</h2>
+                <div class="item"><span>Ceai infuzie 1L</span> <span class="price">60 lei</span></div>
+                <div class="item"><span>Ceai Natural Homemade 1L</span> <span class="price">80 lei</span></div>
+                <p class="description">Ghimbir & Lamîie • Fructe de padure • Catina</p>
+            </section>
+
+            <div class="line-divider"></div>
+
+            <section id="limonade-fresh">
+                <h2 class="section-title">Limonade & Fresh</h2>
+                <div class="item"><span>Limonada Clasica</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Limonada de Fructe</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Fresh de Portocala</span> <span class="price">70 lei</span></div>
+                <div class="item"><span>Fresh de Grapefruit</span> <span class="price">70 lei</span></div>
+                <div class="item"><span>Fresh Citric Mix</span> <span class="price">70 lei</span></div>
+            </section>
+
+            <div class="line-divider"></div>
+
+            <section id="bauturi-racoritoare">
+                <h2 class="section-title">Bauturi Racoritoare</h2>
+                <div class="item"><span>Coca Cola 0,25l</span> <span class="price">25 lei</span></div>
+                <div class="item"><span>Fanta 0,25l</span> <span class="price">25 lei</span></div>
+                <div class="item"><span>Sprite 0,25l</span> <span class="price">25 lei</span></div>
+                <div class="item"><span>Schweppes 0,25l</span> <span class="price">25 lei</span></div>
+                <div class="item"><span>Burn 0,25l</span> <span class="price">40 lei</span></div>
+                <div class="item"><span>Dorna 0,33l</span> <span class="price">35 lei</span></div>
+                <div class="item"><span>Dorna 0,75l</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Borjomi 0,5l</span> <span class="price">55 lei</span></div>
+
+                <div class="line-divider"></div>
+
+                <div class="item"><span>Adaos Sirop</span> <span class="price">7 lei</span></div>
+                <div class="item"><span>Adaos Miere</span> <span class="price">7 lei</span></div>
+                <div class="item"><span>Adaos Lapte vegetal</span> <span class="price">10 lei</span></div>
+            </section>
+
+            <div class="spacer"></div>
+
+            <header>
+                <h1 class="main-title">Wine List</h1>
+            </header>
+
+            <section id="spumante">
+                <h2 class="section-title">Spumante</h2>
+                <div class="item"><span>Prosecco Extra Dry Wine Crime</span> <span class="price">250 lei</span></div>
+                <div class="item"><span>Spumant Wine Crime Naugh Alb Dulce</span> <span class="price">250 lei</span>
+                </div>
+                <div class="item"><span>Spumant CUVEE Alb Brut</span> <span class="price">500 lei</span></div>
+                <div class="item"><span>Spumant Wine Crime Flirt Rose Dulce</span> <span class="price">250 lei</span>
+                </div>
+                <div class="item"><span>Spumant Wine Crime Rose Brut</span> <span class="price">250 lei</span></div>
+                <div class="item"><span>Spumant CUVEE Rose Brut</span> <span class="price">600 lei</span></div>
+            </section>
+
+            <div class="line-divider"></div>
+
+            <section id="vinuri">
+                <h2 class="section-title">Vinuri</h2>
+                <div class="item"><span>Vin alb la pahar</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Vin rose la pahar</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Vin rosu la pahar</span> <span class="price">50 lei</span></div>
+                <div class="item"><span>Chardonnay Nocturne Purcari</span> <span class="price">370 lei</span></div>
+                <div class="item"><span>Pinot Grigio Nocturne Purcari</span> <span class="price">370 lei</span></div>
+                <div class="item"><span>Sauvignon Blanc Nocturne Purcari</span> <span class="price">370 lei</span></div>
+                <div class="item"><span>Sauvignon Blanc FUME Sapiens Purcari</span> <span class="price">450 lei</span>
+                </div>
+                <div class="item"><span>Viorica Nocturne Purcari</span> <span class="price">400 lei</span></div>
+                <div class="item"><span>Vin Wine Crime Alb Sec</span> <span class="price">190 lei</span></div>
+                <div class="item"><span>Rose Nocturne Cabernat/Merlot/Rară-Neagră</span> <span class="price">370
+                        lei</span>
+                </div>
+                <div class="item"><span>Vin Wine Crime Rose Sec</span> <span class="price">190 lei</span></div>
+                <div class="item"><span>Orange Sapiens Rkatsiteli Purcari</span> <span class="price">450 lei</span>
+                </div>
+                <div class="item"><span>Cabernet-Sauvignon Nocturne Purcari</span> <span class="price">370 lei</span>
+                </div>
+                <div class="item"><span>Rară Neagră Nocturne Purcari</span> <span class="price">470 lei</span></div>
+                <div class="item"><span>Rară Neagră Sapiens Purcari</span> <span class="price">450 lei</span></div>
+            </section>
+
+            <div class="line-divider"></div>
+
+            <section id="cocktails">
+                <h2 class="section-title">Cocktails</h2>
+
+                <div class="item"><span>Pornstar Martini</span> <span class="price">100 lei</span></div>
+                <p class="description">Vodka, lichior de fructul pasiunii, piure de fructul pasiunii, suc de lime,
+                    sirop de vanilie, spumant (200 ml)</p>
+
+                <div class="item"><span>Gin Tonic</span> <span class="price">100 lei</span></div>
+                <p class="description">Gin, apa tonica, felie de lime (450 ml)</p>
+
+                <div class="item"><span>Aperol Spritz</span> <span class="price">90 lei</span></div>
+                <div class="item"><span>Aperol Spritz servit cu Mix aperitivo</span> <span class="price">140 lei</span>
+                </div>
+                <p class="description">Spumant, Aperol, Apa minerala, felie de portocala (450 ml)</p>
+
+                <div class="item"><span>Hugo Spritz</span> <span class="price">90 lei</span></div>
+                <p class="description">Spumant, apa minerala, sirop de soc, frunze de menta, felie de lime (450 ml)
+                </p>
+
+                <div class="item"><span>Espreso Martini</span> <span class="price">90 lei</span></div>
+                <p class="description">Vodka, lichior de cafea, espresso, sirop de zahar (180 ml)</p>
+
+                <div class="item"><span>Campari Orange</span> <span class="price">90 lei</span></div>
+                <p class="description">Campari, suc de portocale, felie de portocala (250 ml)</p>
+
+                <div class="item"><span>Mojito</span> <span class="price">90 lei</span></div>
+                <p class="description">Rom alb, zahar, suc de lime, frunze de menta, apa minerala (450 ml)</p>
+
+                <div class="line-divider"></div>
+
+                <div class="item"><span>Bere Corona 0,33 ml</span> <span class="price">70 lei</span></div>
+                <div class="item"><span>Bere Corona 0,33 ml fara alcool</span> <span class="price">70 lei</span></div>
+            </section>
+
+        </div>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Drinks section navigation">
+        <a href="#cafea">Cafea</a>
+        <a href="#ceai">Ceai</a>
+        <a href="#limonade-fresh">Limonade</a>
+        <a href="#bauturi-racoritoare">Racoritoare</a>
+        <a href="#spumante">Spumante</a>
+        <a href="#vinuri">Vinuri</a>
+        <a href="#cocktails">Cocktails</a>
+    </nav>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+            focusable="false">
+            <polyline points="3,12 9,6 15,12" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
